@@ -16,13 +16,14 @@
 		<script src="scripts/jscookie.js"></script>
 		<script src="scripts/localStorageCookiePatch.js"></script>
 		<script>
-			if(localStorage.getItem("quickstart") == "true" && !(localStorage.getItem("timetableHasbeenBuilt") == "true")) {
+			if(localStorage.getItem("quickstart") == "true" && !(localStorage.getItem("timetableHasBeenBuilt") == "true")) {
 				localStorage.setItem("weekLayout", JSON.stringify([1,1,1,1,1,0,0]));
 				localStorage.setItem("periodTimes", JSON.stringify([["08:45","09:35",false],["09:35","10:25",false],["10:25","10:45",true],["10:45","11:35",false],["11:35","00:25",false],["00:25","01:15",false],["01:15","02:05",true],["02:05","02:55",false],["02:55","03:45",false]]));
 				localStorage.setItem("timetableName", "Julian's Timetable");
 				localStorage.setItem("timetableHasBeenBuilt", "true");
-				localStorage.removeItem("quickstart");
+				localStorage.setItem("showQuickStartAlert", "true");
 			}
+			localStorage.removeItem("quickstart");
 		</script>
 		<script>
 			if(!(localStorage.getItem("timetableHasBeenBuilt") == "true")) {
