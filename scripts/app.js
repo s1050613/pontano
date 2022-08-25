@@ -23,6 +23,16 @@ window.addEventListener("load", () => {
 	periodTimes = JSON.parse(localStorage.getItem("periodTimes"));
 	ttableName = localStorage.getItem("timetableName") || "My Timetable";
 	
+	if(localStorage.getItem("showQuickStartAlert") == "true") {
+		swal.fire({
+			icon: "success",
+			title: "Quick start!",
+			text: "This is one of our developer's timetables. Take a look around and see how your timetable could look!",
+			footer: "<u>Tip: Right-click the title to change it!</u>"
+		});
+		localStorage.removeItem("showQuickStartAlert");
+	}
+	
 	computeDays();
 	//console.log(days);
 	
