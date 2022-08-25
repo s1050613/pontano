@@ -79,3 +79,18 @@
 	background: #F5F5F5;
 	border: 2px outset white;
 }
+#voteNumber {
+	position: absolute;
+	left: 20px;
+	top: 20px;
+	font-weight: bold;
+	animation: pulse 0.6s ease-out infinite;
+}
+@keyframes pulse {
+	from, to {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+}
