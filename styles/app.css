@@ -15,8 +15,8 @@
 	
 	--period-shadow-x: 0;
 	--period-shadow-y: 0;
-	--period-shadow-blur: 5px;
-	--period-shadow-spread: 0;
+	--period-shadow-blur: 7px;
+	--period-shadow-spread: 1px;
 	--period-shadow-col: #BABABA;
 	--period-font: inherit;
 	--period-border-radius: 8px;
@@ -72,5 +72,10 @@
 
 #resetBtn {
 	position: absolute;
-	right: 0;
+	right: 20px;
+	top: 20px;
+	
+	border-radius: 5px;
+	background: #F5F5F5;
+	border: 2px outset white;
 }

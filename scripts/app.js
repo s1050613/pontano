@@ -85,6 +85,7 @@ function reloadTtableEl() {
 					var col = isBreak? "#CCC" : subjectColours[periodN];
 					periodEl.style.background = col;
 					periodEl.style.borderColor = RGBTripletToRGB(hexToRGBTriplet(col).map(c => c - 30));
+					periodEl.style.boxShadow = `var(--period-shadow-x) var(--period-shadow-y) var(--period-shadow-blur) var(--period-shadow-spread) ${col}`;
 					lastPeriod = timetableData[day][period];
 					prevEl = periodEl;
 				}
