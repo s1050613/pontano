@@ -1,0 +1,9 @@
+* {
+	font-family: "Pontano", Arial;
+}
+.hidden {
+	display: none !important;
+}
+.invisible {
+	opacity: 0 !important;
+}

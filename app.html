@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>My Timetable | Pontano</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="title" content="Welcome to Pontano: Timetable of the Future">
+		<meta name="keywords" content="timetable,pontano">
+		<meta name="description" content="Pontano is the timetable of the future when it comes to easy timetables. Made for students, by students.">
+		
+		<link rel="icon" href="favicon.ico" sizes="any"/>
+		<link rel="icon" href="assets/logo.svg" type="image/svg+xml"/>
+		<link rel="apple-touch-icon" href="assets/apple-touch-icon.png"/>
+		<link rel="manifest" href="manifest.webmanifest"/>
+		
+		<script src="scripts/jscookie.js"></script>
+		<script src="scripts/localStorageCookiePatch.js"></script>
+		<script>
+			if(localStorage.getItem("quickstart") == "true" && !(localStorage.getItem("timetableHasbeenBuilt") == "true")) {
+				localStorage.setItem("weekLayout", JSON.stringify([1,1,1,1,1,0,0]));
+				localStorage.setItem("periodTimes", JSON.stringify([["08:45","09:35",false],["09:35","10:25",false],["10:25","10:45",true],["10:45","11:35",false],["11:35","00:25",false],["00:25","01:15",false],["01:15","02:05",true],["02:05","02:55",false],["02:55","03:45",false]]));
+				localStorage.setItem("timetableName", "Julian's Timetable");
+				localStorage.setItem("timetableHasBeenBuilt", "true");
+				localStorage.removeItem("quickstart");
+			}
+		</script>
+		<script>
+			if(!(localStorage.getItem("timetableHasBeenBuilt") == "true")) {
+				localStorage.setItem("showStartAlert", "true");
+				location.replace("builder.html");
+			}
+		</script>
+		
+		<link rel="stylesheet" href="styles/bootstrap.min.css" type="text/css"/>
+		
+		<script src="scripts/sweetalert2.all.min.js"></script>
+		
+		<link rel="stylesheet" href="styles/Pontano.css" type="text/css"/>
+		<link rel="stylesheet" href="styles/essential.css" type="text/css"/>
+		<link rel="stylesheet" href="styles/app.css" type="text/css"/>
+		
+		<script src="scripts/essential.js"></script>
+		<script src="scripts/app.js"></script>
+	</head>
+	<body>
+		<div class="main">
+			<h1 class="titleCont"><span id="timetableName">My Timetable</span></h1>
+			<div id="timetableCont"></div>
+		</div>
+		<button onclick="hardReset();" id="resetBtn">Reset</button>
+	</body>
+</html>

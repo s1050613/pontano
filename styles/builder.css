@@ -1,0 +1,151 @@
+body {
+	background: #FEFEFF;
+}
+.main {
+	margin: auto;
+	padding: 15px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	
+	width: 95vw;
+	height: 95vh;
+	border-radius: 25px;
+	background-color: #FDFDFE;
+	box-shadow: 0 0 15px #8D8D8D;
+	text-align: center;
+}
+
+.step {
+	opacity: 1;
+	transition: opacity 0.5s;
+}
+.step:not(.showing) {
+	opacity: 0;
+}
+
+.toggleableDay {
+	margin: 8px;
+	padding-top: 10px;
+	display: inline-block;
+	width: 100px;
+	height: 68px;
+	font-size: 15px;
+	/* border: 1px solid black; */
+	border-radius: 20px;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+	cursor: pointer;
+	
+	transition-duration: 0.2s;
+}
+.toggleableDay[data-selected="true"] {
+	background: #69F0AF;
+	/* box-shadow: 0 0 10px 3px rgb(85, 156, 200); */
+	box-shadow: #69F0AF 0px 13px 27px -5px, #69F0AF 0px 8px 16px -8px;
+}
+
+.builderPeriod {
+	margin: 8px;
+	display: inline-block;
+	width: 110px;
+	height: 128px;
+	font-size: 15px;
+	border-radius: 20px;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.builderPeriod .builderTime {
+	display: block;
+}
+.builderPeriodIsBreakCheckbox {
+	appearance: none;
+	width: 20px;
+	height: 20px;
+	background-color: white;
+	border: 1px solid #59D08F;
+	border-radius: 50%;
+	cursor: pointer;
+	
+	transition-duration: 0.2s;
+}
+.builderPeriodIsBreakCheckbox:checked {
+	background-color: #69F0AF;
+}
+
+#subjectSelector {
+	text-align: center;
+}
+.subject {
+	margin: 3px;
+	padding: 8px;
+	display: inline-block;
+	width: 125px;
+	height: 145px;
+	
+	text-align: center;
+	border: 4px solid white;
+	border-radius: 10px;
+	background: #E8FFE8;
+	box-shadow: 0 0 10px 3px #E8FFE8;
+	position: relative;
+}
+.subject span {
+	display: block;
+	height: 50px;
+}
+.subjectBtn {
+	margin: auto;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: #D8EFD8;
+	border: 3px solid white;
+	
+	position: absolute;
+	left: 0;
+	right: 0;
+	
+	transition: transform 0.325s cubic-bezier(0.165, 0.84, 0.44, 1), background 0.15s;
+}
+.subjectBtn:hover {
+	transform: scale(1.2);
+}
+.subjectBtn:active {
+	background: #C8DFC8;
+}
+.subjectRemoveBtn {
+	bottom: 10px;
+}
+.newSubjectBtn {
+	top: 0;
+	bottom: 0;
+}
+
+.buildBtn {
+	margin: 15px;
+	width: 100px;
+	font-size: 15px;
+	background: white;
+	border-radius: 10px;
+	border: none;
+	box-shadow: 0 5px 20px #0005;
+	
+	transition: transform 0.275s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.33s;
+}
+.buildBtn:hover {
+	transform: scale(1.1);
+}
+.buildFinishBtn:hover {
+	background-color: #69F0AF;
+	animation: pulse 0.6s ease-out infinite;
+}
+
+@keyframes pulse {
+	from, to {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+}

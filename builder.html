@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Timetable Builder | Pontano</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="title" content="Welcome to Pontano: Timetable of the Future">
+		<meta name="keywords" content="timetable,pontano">
+		<meta name="description" content="Pontano is the timetable of the future when it comes to easy timetables. Made for students, by students.">
+		
+		<link rel="icon" href="favicon.ico" sizes="any"/>
+		<link rel="icon" href="assets/logo.svg" type="image/svg+xml"/>
+		<link rel="apple-touch-icon" href="assets/apple-touch-icon.png"/>
+		<link rel="manifest" href="manifest.webmanifest"/>
+		
+		<script src="scripts/jscookie.js"></script>
+		<script src="scripts/localStorageCookiePatch.js"></script>
+		<script>
+			if(localStorage.getItem("timetableHasBeenBuilt") == "true") {
+				location.replace("app.html");
+			}
+		</script>
+		
+		<link rel="stylesheet" href="styles/bootstrap.min.css" type="text/css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"/>
+		
+		<script src="scripts/sweetalert2.all.min.js"></script>
+		
+		<link rel="stylesheet" href="styles/Pontano.css" type="text/css"/>
+		<link rel="stylesheet" href="styles/essential.css" type="text/css"/>
+		<link rel="stylesheet" href="styles/builder.css" type="text/css"/>
+		
+		<script src="scripts/essential.js"></script>
+		<script src="scripts/builder.js"></script>
+	</head>
+	<body>
+		<div class="main">
+			<h1><u>Build your timetable: Pontano</u></h1>
+			<div class="step showing" data-step-n="1">
+				<h2>Step 1: Enter your day layout</h2>
+				<h5>What days do you have school?</h5>
+				<div>
+					<label for="weeks">Weeks:</label>
+					<input type="number" min="1" max="10" value="1" autocomplete="off" id="weeks"/>
+					<button title="Next step" class="buildNextBtn buildBtn">Next</button>
+				</div>
+				<div id="daySelector">
+					<div class="toggleableDay" data-i="0" data-selected="true"><span>Monday</span></div>
+					<div class="toggleableDay" data-i="1" data-selected="true"><span>Tuesday</span></div>
+					<div class="toggleableDay" data-i="2" data-selected="true"><span>Wednesday</span></div>
+					<div class="toggleableDay" data-i="3" data-selected="true"><span>Thursday</span></div>
+					<div class="toggleableDay" data-i="4" data-selected="true"><span>Friday</span></div>
+					<div class="toggleableDay" data-i="5" data-selected="false"><span>Saturday</span></div>
+					<div class="toggleableDay" data-i="6" data-selected="false"><span>Sunday</span></div>
+				</div>
+			</div>
+			<div class="step hidden" data-step-n="2">
+				<h2>Step 2: Enter period times</h2>
+				<h5>When do classes start and finish?</h5>
+				<div>
+					<button title="Previous step" class="buildPrevBtn buildBtn">Back</button>
+					<label for="weeks">How many periods?</label>
+					<input type="number" min="1" max="20" value="7" autocomplete="off" id="builderPeriodCount"/>
+					<button title="Next step" class="buildNextBtn buildBtn">Next</button>
+				</div>
+				<template id="builderPeriodTimeTemplate">
+					<div class="builderPeriod">
+						<input type="time" value="$1" autocomplete="off" class="builderTime"/> to <input type="time" value="$2" autocomplete="off" class="builderTime"/>
+						<span class="builderPeriodIsBreakLabel">Break period:</span>
+						<input type="checkbox" $3 autocomplete="off" class="builderPeriodIsBreakCheckbox"/>
+					</div>
+				</template>
+				<div id="builderPeriodTimesCont"></div>
+			</div>
+			<div class="step hidden" data-step-n="3">
+				<h3>Step 3: Enter subjects</h3>
+				<h5>What subjects and teachers do you have?</h5>
+				<div>
+					<button title="Previous step" class="buildPrevBtn buildBtn">Back</button>
+					<button title="Finish building your timetable!" class="buildFinishBtn buildBtn">Finish!</button>
+				</div>
+				<template id="subjectTemplate">
+					<div class="subject">
+						<span>$1</span>
+						<button title="Delete" class="subjectRemoveBtn subjectBtn"><i class="fa fa-trash"></i></button>
+					</div>
+				</template>
+				<template id="subjectAddCardTemplate">
+					<div class="subject newSubjectCard">
+						<span>Add subject</span>
+						<button title="Add subject" class="newSubjectBtn subjectBtn"><i class="fa fa-plus"></i></button>
+					</div>
+				</template>
+				<div id="subjectSelector"></div>
+			</div>
+		</div>
+	</body>
+</html>

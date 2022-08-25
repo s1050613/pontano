@@ -1,0 +1,142 @@
+@keyframes slide_in {
+	from {
+		transform: translate(-200px, 0);
+		opacity: 0;
+		display: none;
+	}
+	to {
+		transform: translate(0, 0);
+		opacity: 1;
+	}
+}
+
+* {
+	scrollbar-width: thin;
+	scrollbar-color: #0d6efd white;
+}
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+	width: 8px;
+}
+*::-webkit-scrollbar-track {
+	background: white;
+}
+*::-webkit-scrollbar-thumb {
+	background-color: #0d6efd;
+}
+
+section {
+	padding: 20px;
+	/*border: 1px solid black;*/
+}
+.full-width {
+	margin: 0;
+	width: 100%;
+}
+.line {
+	margin: -20px auto 20px auto;
+	position: relative;
+}
+
+#nav-cont {
+	margin: 0;
+	position: sticky;
+	top: 0;
+	background: white;
+	z-index: 5;
+}
+#nav-bar {
+	width: 100vw;
+}
+.nav-item {
+	margin: 0 2px;
+	border-radius: 5px;
+	transition-duration: 0.3s;
+}
+.nav-item:hover {
+	background: lightskyblue;
+}
+#intro {
+	background: lightskyblue;
+}
+#intro h1 {
+	margin: 0;
+	animation: slide_in 1s ease-out;
+}
+#intro h3 {
+	animation: slide_in 1s ease-out 0.5s backwards;
+}
+#intro > * {
+	margin: 10px;
+}
+#intro button {
+	margin: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+	animation: slide_in 1s ease-out 1s backwards;
+}
+#sneakpeak-cont {
+	max-height: 30vh;
+}
+#sneakpeak-cont img {
+	margin-top: 25px;
+	box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.25);
+	border-radius: 8px;
+}
+
+#story {
+	padding: 0;
+}
+
+#shameless-self-promotion span {
+	font-weight: bold;
+}
+
+.noBigGap {
+	width: 100%;
+}
+
+.plsNotWide {
+	text-align: center;
+	position: relative;
+}
+.asdfasdfa {
+	margin: auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+	text-align: center;
+	width: 90% !important;	
+}
+
+.col .card {
+	height: 380px;
+}
+.col .card button {
+	margin: auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 20px;
+	width: 60% !important;
+}
+.tiny {
+	font-size: 14px;
+}
+
+#faq li {
+	margin: 5px 0;
+}
+#faq li + i {
+	display: inline-block;
+	transform: scaleY(0);
+	transform-origin: top;
+	transition-duration: 0.9s;
+	max-height: 0;
+	overflow: hidden;
+	opacity: 0;
+}
+#faq li:hover + i {
+	transform: scaleY(1);
+	max-height: 200px;
+	opacity: 1;
+}

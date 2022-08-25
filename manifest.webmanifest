@@ -1,0 +1,34 @@
+{
+	"background_color": "#69F0AF",
+	"categories": ["education", "personalization", "productivity", "utilities"],
+	"description": "Pontano is the timetable of the future when it comes to easy timetables. Made for students, by students.",
+	"dir": "ltr",
+	"lang": "en",
+	"display": "standalone",
+	"display_override": "minimal-ui",
+	"icons": [
+		{
+			"src": "assets/icon-192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "assets/icon-512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	],
+	"name": "Pontano",
+	"orientation": "landscape",
+	"prefer_related_applications": "false",
+	"related_applications": [],
+	"short_name": "P.",
+	"shortcuts": [
+		{
+			"description": "Try Pontano out!",
+			"name": "App",
+			"url": "app.html"
+		}
+	],
+	"theme_color": "#69F0AF"
+}
